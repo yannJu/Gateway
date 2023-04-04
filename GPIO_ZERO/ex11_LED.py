@@ -11,4 +11,7 @@ red = LED(13)
 #     sleep(1)
     
 red.blink()
-pause()
+sleep(5)
+
+red.blink(on_time=0.2, off_time=1)
+sleep(5)
