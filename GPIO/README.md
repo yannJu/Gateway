@@ -20,3 +20,6 @@
     - `수동 부저` 를 활용한 실습
     - `ChangDutyCycle` 의 경우 **0-100** 까지만 지정이 가능
     - 따라서 `ChangeFrequency` 를 이용하여 **주파수** 를 변경
+7. ### [ex07_PWM_Servo.py](./ex07_PWM_Servo.py)
+    - `Servo 모터` 를 활용한 실습
+    - **Purse** 의 높이(Duty 비)가 모터의 **각도** 를 표현
