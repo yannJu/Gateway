@@ -10,3 +10,6 @@
 3. [./ex03_Btn_Event.py](./ex03_Btn_Event.py)
     - `Button` 입력을 통해 **callback** 함수 연결
     - `add_event_detect` 를 이용하여 **엣지** 에 따라 `callback` 함수가 호출되도록 한다.
+4. [ex04_Btn_LED.py](./ex04_Btn_LED.py)
+    - `Button` 입력을 통해 `LED` 제어
+    - **ex01** ~ **ex03** 활용
