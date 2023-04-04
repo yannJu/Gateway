@@ -23,3 +23,4 @@
 7. ### [ex07_PWM_Servo.py](./ex07_PWM_Servo.py)
     - `Servo 모터` 를 활용한 실습
     - **Purse** 의 높이(Duty 비)가 모터의 **각도** 를 표현
+    - 각도를 **입력**받아 `Servo모터` 조정
