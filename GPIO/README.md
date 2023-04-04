@@ -30,3 +30,14 @@
     - `초음파센서` 를 활용한 실습
 9. ### [ex09_PIR.py](./ex09_PIR.py)
     - `PIR센서`를 활용한 실습
+10. ### [ex10_MCP_3008.py](./ex10_MCP_3008.py)
+    - **아날로그 입출력** 을 위해 `MCP_3008` 사용
+    - `MISO`, `MOSI`, `SPICLK` 등 **SPI통신** 에서 사용한 것들을 이용하여 `아날로그 신호`를 다룬다.
+    - `Timmy Diagram`
+        - `xfer2([i1, i2, i3])`일때, **i1~i3** 는 `SCLK` 와 연관이 있다.
+        - `i1` : start bit
+        - `i2` : 하위 4bit는 don't care / 상위 1bit는 signal 선 , 나머지 3bit 는 채널
+            - 하위 4bit가 `don't care` 이기 때문에 **<< 4** 가 진행
+        - `i3` : don't care
+        - `data` 출력의 경우 **(r[1] & 3) << 8 + r[2]** 와 같이 연산
+        - **10bit** 의 해상도를 위해 **3** 만큼 비트마스킹
