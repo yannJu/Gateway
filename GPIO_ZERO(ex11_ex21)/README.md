@@ -43,3 +43,7 @@
     - 각도의 범위가 **90도** .  . ▷ 생성시에 `min_pulse_width` 와 `max_pulse_width` 를 조절하면 된다.
         - `0.00054` : 0도
         - `0.0024` : 180도
+11. ### [ex21_AngularServo.py](./ex21_AngularServo.py)
+    - **ex20** 같은 경우 `각도` 로 제어하지 않는다.
+    - `AngularServo` 모듈을 통해 각도를 지정
+        - `min_angle`과 `min_pulse_width` 가 연결, `max_angle`은 `max_pulse_width` 와 연결
