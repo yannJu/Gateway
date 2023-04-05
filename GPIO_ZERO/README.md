@@ -32,4 +32,7 @@
 7. ### [ex17_GRBLED.py](./ex17_GRBLED.py)
     - `3색 LED` 를 `RGELED`로 제어
 ### → **ex15-ex17** 을 보면 함수호출보다 `property` 의 `setter`를 이용하여 제어를 하고 있는 모습을 보임
-8. ### []()
+8. ### [ex18_MotionSensor.py](./ex18_MotionSensor.py)
+    - `PIR`센서를 이용한 실습
+    - gpiozero 의 `MotionSensor` 모듈을 이용
+    - 움직임이 감지됨에 따라 `LED` 제어
