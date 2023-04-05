@@ -41,3 +41,5 @@
 10. ### [ex20_Servo.py](./ex20_Servo.py)
     - `Servo` 모터 제어
     - 각도의 범위가 **90도** .  . ▷ 생성시에 `min_pulse_width` 와 `max_pulse_width` 를 조절하면 된다.
+        - `0.00054` : 0도
+        - `0.0024` : 180도

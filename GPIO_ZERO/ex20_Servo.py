@@ -1,7 +1,8 @@
 from gpiozero import Servo
 from time import sleep
 
-servo = Servo(12)
+# servo = Servo(12)
+servo = Servo(12, min_pulse_width=0.00054, max_pulse_width=0.0024) #0~180도 범위로 늘림
 
 while True:
     servo.mid()
