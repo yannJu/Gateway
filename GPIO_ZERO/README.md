@@ -24,3 +24,8 @@
         led.source = btn
         ```
     - 위와같이 `Button`의 상태를 `LED`에 동기화
+5. ### [ex15_LEDBoard.py](./ex15_LEDBoard.py)
+    - 여러개의 `LED` 를 한번에 제어
+    - **디지털** 로 제어하는데, 생성자에서 `pwm` 인자에 **True** 를 해주면 **아날로그** 출력 가능
+6. ### [ex16_LEDBarGraph.py](./ex16_LEDBarGraph.py)
+    - `LEDBarGraph` 라이브러리를 사용하여 `LED` 제어
