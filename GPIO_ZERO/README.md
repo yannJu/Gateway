@@ -36,3 +36,6 @@
     - `PIR`센서를 이용한 실습
     - gpiozero 의 `MotionSensor` 모듈을 이용
     - 움직임이 감지됨에 따라 `LED` 제어
+9. ### [ex19_DistanceSensor.py](./ex19_DistanceSensor.py)
+    - `초음파센서` 를 이용하여 거리 측정
+10. ### []()
