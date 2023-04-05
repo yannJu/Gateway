@@ -9,7 +9,7 @@
 	- `GPIO` 를 이용하여 **입출력** 연습
     - `BCM` 모드를 통해 일반 **PIN** 번호가 아닌 `GPIO` 번호를 이용
     - **아두이노** 에서 사용한 센서들을 이용하여 간단한 실습 진행
-2. ### [GPIO_ZERO(ex11_ex20)](./GPIO_ZERO(ex11_ex20)/)
+2. ### [GPIO_ZERO(ex11_ex21)](./GPIO_ZERO(ex11_ex21))
     - `gpiozero` 라이브러리를 이용하여 보다 센서를 쉽게 다룰 수 있다.
 3. ### [pigpio.py](./pigpio.py)
     - `jittering` 을 제어할 수 있다. → skeleton 코드는 메인 폴더에 *[pigpio.py](./pigpio.py)* 로 위치해 있다.
