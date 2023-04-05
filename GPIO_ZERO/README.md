@@ -29,3 +29,7 @@
     - **디지털** 로 제어하는데, 생성자에서 `pwm` 인자에 **True** 를 해주면 **아날로그** 출력 가능
 6. ### [ex16_LEDBarGraph.py](./ex16_LEDBarGraph.py)
     - `LEDBarGraph` 라이브러리를 사용하여 `LED` 제어
+7. ### [ex17_GRBLED.py](./ex17_GRBLED.py)
+    - `3색 LED` 를 `RGELED`로 제어
+### → **ex15-ex17** 을 보면 함수호출보다 `property` 의 `setter`를 이용하여 제어를 하고 있는 모습을 보임
+8. ### []()
