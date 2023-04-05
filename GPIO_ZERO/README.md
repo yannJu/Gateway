@@ -38,4 +38,6 @@
     - 움직임이 감지됨에 따라 `LED` 제어
 9. ### [ex19_DistanceSensor.py](./ex19_DistanceSensor.py)
     - `초음파센서` 를 이용하여 거리 측정
-10. ### []()
+10. ### [ex20_Servo.py](./ex20_Servo.py)
+    - `Servo` 모터 제어
+    - 각도의 범위가 **90도** .  . ▷ 생성시에 `min_pulse_width` 와 `max_pulse_width` 를 조절하면 된다.
