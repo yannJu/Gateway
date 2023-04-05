@@ -1,0 +1,19 @@
+## OPENCV🥼
+---
+1. ### [cv_ex01_imread_imshow.py](./cv_ex01_imread_imshow.py)
+   - `cv2` 를 이용하여 `imread` 를 통해 **이미지** 를 읽어오고 `imshow` 를 통해 띄우기 
+2. ### [cv_ex02_saveImg.py](./cv_ex02_saveImg.py)
+   - `imwrite` 를 통해 파일 저장
+   - 서버에 **이미지** 를 업로드 할 경우 `파일 크기` 를 신경 써야한다.
+   - **이미지의 크기** 등을 조정하여 `파일을 축소` 하는 등 조정이 필요하다.
+3. ### [cv_ex03_videoCap.py](./cv_ex03_videoCap.py) 
+   - `VideoCapture` 를 이용하여 카메라 센서와 연결
+     - **카메라 센서** 와 연결할 수도 있지만 경로를 입력하면 **로컬 비디오 파일** 실행이 가능
+     - `DroidCam` 을 이용하여 **ip카메라** 와도 연결이 가능 → **url** 입력 (`MJpeg` 스트림 : *[cam.html](./cam.html)* 처럼 스트림 가능)
+   -  `cap.read()` 의 경우 제대로 이미지가 들어왔는지의 **여부**와 **frame** 이 들어오게 된다.
+   -  `waitKey()` 에 따라 **fps**  조절이 가능
+      -  `waitKey(25)` 라면 25ms 를 기다리기 때문에 1000 / 25 = 40 으로 **40fps**가 된다.
+4. ### [cv_ex04_videoWrite.py](./cv_ex04_videoWrite.py)
+    - `VideoWriter` 를 이용하여 비디오 녹화
+    - `*` 를 이용하여 펼침 연산자 활용
+    - `BGR2GRAY` 를 통해 흑백 이미지로 변환
