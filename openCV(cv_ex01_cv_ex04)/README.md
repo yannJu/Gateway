@@ -45,8 +45,16 @@
    - 인식된 얼굴에 **모자이크** 처리 진행
    - 이전에 진행한 방법과 다르게 `resize()` 를 활용
    - 기존 **이미지** 를 축소 시킨 후 `기존 사이즈` 로 다시 확대
+      - 이때 `interpolation = cv2.INTER_AREA` 을 이용하여 부족한 부분을 **interpolation** 처리한다.
 13. ### [cv_ex13_detectFace_withVideo.py](./cv_ex13_detectFace_withVideo.py)
    - 직접 **usb_cam** 에서 영상을 받아와 **얼굴인식** 진행
    - **cv_ex12** 에서 진행한 모자이크 기능 추가
    - 보다 정확하게 **얼굴인식** 하기 위해 **cv_ex10** 의 클래스에서 `detect` 시 받는 인자 **minSize** 를 제어
-
+14. ### [cv_ex14_Video.py](./cv_ex14_Video.py)
+   - `VideoCapture` 과정을 클래스화
+   - **for** 문에서 반복문을 수행하는 객체가 `iterator` 로 동작
+   - `__iter__` 에서 **return** 한 값은 `__next__` 로 호출된다.
+   - `iterator` 객체를 생성하면 **for** 문에서 사용 가능
+   - `__enter__`와 `__exit__` 는 **with** 절의 `context_manager` 
+   - `__exit__` 는 **with** 절이 끝날 때 발생
+   - `show`, `to_jpg`, `resize_frame` 등의 함수를 구현해 두어 이전에 구현했던 코드들의 중복을 줄여 편리하게 활용할 수 있다.
