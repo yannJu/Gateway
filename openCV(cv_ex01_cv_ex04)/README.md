@@ -17,3 +17,11 @@
     - `VideoWriter` 를 이용하여 비디오 녹화
     - `*` 를 이용하여 펼침 연산자 활용
     - `BGR2GRAY` 를 통해 흑백 이미지로 변환
+5. ### [cv_ex05_putText_videoRW.py](./cv_ex05_putText_videoRW.py)
+   - `putText` 를 이용하여 **이미지** 에 **text** 추가
+   - `video cam` 에서 비디오를 입력받고 **text** 를 추가하여 `video write` 
+6. ### [cv_ex06_ROI1.py](./cv_ex06_ROI1.py)
+   - 이미지를 **슬라이싱**을 이용하여 `관심영역(ROI)` 추출
+   - `numpy` 에서는 **[y, x]** 로, `opencv` 에서는 **(x, y)** 로 읽음
+7. ### [cv_ex07_ROI2_Blur.py](./cv_ex07_ROI2_Blur.py)
+   - 주어진 **이미지** 를 연산을 이용하여 `Blur` 처리 되는 코드 구현
