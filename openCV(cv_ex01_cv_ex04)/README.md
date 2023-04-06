@@ -31,3 +31,8 @@
    - `MotionSensor` 에 움직임이 감지되면 `Video Capture`를 시작
    - 움직임이 더이상 감지 되지 않으면 `Recording` 중단
    - 이때, `release()` 와 `putText()` 가 동시에 동작하기 때문에 **상태변수** 를 지정하여 구현하여야 한다. 
+9. ### [cv_ex09_faceDetect.py](./cv_ex09_faceDetect.py)
+   - `haarcascades` 를 이용하여 **얼굴인식** 해보기
+   - `haarcascade_frontalface_alt.xml` 의 경로를 `Cascade Classifier` 에 넣어주어 객체를 생성
+   - 생성한 객체를 `detectMultiScale` 을 이용해 **얼굴인식** 진행
+   - 인식된 얼굴은 **x, y, w, h** 순으로 들어오게 된다.
