@@ -2,8 +2,8 @@
 import cv2
 import numpy as np
 
-# src = cv2.imread('./data/dena.jpg', cv2.IMREAD_GRAYSCALE)
-src = cv2.imread('./image.jpeg', cv2.IMREAD_GRAYSCALE)
+src = cv2.imread('./data/lena.jpg', cv2.IMREAD_GRAYSCALE)
+# src = cv2.imread('./image.jpeg', cv2.IMREAD_GRAYSCALE)
 dst = np.zeros(src.shape, dtype = src.dtype)
 
 N = 64 # 2의 N 승
