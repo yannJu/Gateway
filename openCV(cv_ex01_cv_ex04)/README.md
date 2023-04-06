@@ -36,3 +36,17 @@
    - `haarcascade_frontalface_alt.xml` 의 경로를 `Cascade Classifier` 에 넣어주어 객체를 생성
    - 생성한 객체를 `detectMultiScale` 을 이용해 **얼굴인식** 진행
    - 인식된 얼굴은 **x, y, w, h** 순으로 들어오게 된다.
+10. ### [cv_ex10_harrdetect.py](./cv_ex10_harrdetect.py)
+   - **얼굴 인식** 과 **Rectangle** 을 그리는 부분을 클래스화
+11. ### [cv_ex11_faceDetect_withClass.py](cv_ex11_faceDetect_withClass.py)
+   - **cv_ex10** 에서 만든 클래스를 이용하여 **얼굴인식** 진행
+12. ### [cv_ex12_Blur_atDetectFace.py](./cv_ex12_Blur_atDetectFace.py)
+   - **cv_ex10** 을 이용하여 **얼굴인식** 진행
+   - 인식된 얼굴에 **모자이크** 처리 진행
+   - 이전에 진행한 방법과 다르게 `resize()` 를 활용
+   - 기존 **이미지** 를 축소 시킨 후 `기존 사이즈` 로 다시 확대
+13. ### [cv_ex13_detectFace_withVideo.py](./cv_ex13_detectFace_withVideo.py)
+   - 직접 **usb_cam** 에서 영상을 받아와 **얼굴인식** 진행
+   - **cv_ex12** 에서 진행한 모자이크 기능 추가
+   - 보다 정확하게 **얼굴인식** 하기 위해 **cv_ex10** 의 클래스에서 `detect` 시 받는 인자 **minSize** 를 제어
+
