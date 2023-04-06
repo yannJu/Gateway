@@ -1,5 +1,7 @@
 ## OPENCV🥼
 ---
+0. ### [ex00_showVideo.py](./ex00_showVideo.py)
+   - **ex03** 에 계속 비디오 변수를 만들기 번거로워서, `input` 을 통해 경로를 받도록 구현
 1. ### [cv_ex01_imread_imshow.py](./cv_ex01_imread_imshow.py)
    - `cv2` 를 이용하여 `imread` 를 통해 **이미지** 를 읽어오고 `imshow` 를 통해 띄우기 
 2. ### [cv_ex02_saveImg.py](./cv_ex02_saveImg.py)
@@ -25,3 +27,7 @@
    - `numpy` 에서는 **[y, x]** 로, `opencv` 에서는 **(x, y)** 로 읽음
 7. ### [cv_ex07_ROI2_Blur.py](./cv_ex07_ROI2_Blur.py)
    - 주어진 **이미지** 를 연산을 이용하여 `Blur` 처리 되는 코드 구현
+8. ### [cv_ex08_MotionSensor_withVideoWrite.py](./cv_ex08_MotionSensor_withVideoWrite.py)
+   - `MotionSensor` 에 움직임이 감지되면 `Video Capture`를 시작
+   - 움직임이 더이상 감지 되지 않으면 `Recording` 중단
+   - 이때, `release()` 와 `putText()` 가 동시에 동작하기 때문에 **상태변수** 를 지정하여 구현하여야 한다. 
