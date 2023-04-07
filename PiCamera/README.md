@@ -50,3 +50,5 @@
    - 만약 **캡쳐** 후 다시 **write** 하게 되면 기존 캡쳐한 파일의 끝에 `ptr` 이 있기 때문에 그 이후에 **write** 하게된다.
       - **read** 할 방법이 없다.
       - `truncate` 를 이용하여 `ptr` 이후를 지운다. 
+9. ### [pi_ex09_capture_sequence.py](./pi_ex09_capture_sequence.py)
+   - `capture_sequence` 를 이용하여 연속 촬영하기
