@@ -31,4 +31,8 @@
    - 혹은 파이썬에서 `subprocess` 라이브러리와 `os` 라이브러리를 활용해 쉘명령 진행 
 
    5-1) [video_util.py](./video_util.py) : **컨버터** 구현
-6. 
+6. ### [pi_ex06_motionSensor.py](./pi_ex06_motionSensor.py)
+   - `MotionSensor` 와 함께 실습 진행
+   - `Motion Sensor` 에 움직임이 감지되면 **녹화시작**
+   - 감지 끝나면 **녹화 중단**
+   - `opencv` 와 다르게 동시에 **스레드** 처리 되는 것이 아니므로 **상태변수** 를 줄 필요가 없다.
