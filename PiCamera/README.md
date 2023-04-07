@@ -52,3 +52,6 @@
       - `truncate` 를 이용하여 `ptr` 이후를 지운다. 
 9. ### [pi_ex09_capture_sequence.py](./pi_ex09_capture_sequence.py)
    - `capture_sequence` 를 이용하여 연속 촬영하기
+   - `capture_continuous`를 이용하여 연속 촬영하기
+      - 멈추지 않고 계속 촬영
+      - **파일명** 을 반환
