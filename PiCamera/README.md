@@ -18,3 +18,15 @@
    - 밝기(`brightness`), 대비(`contrast`) 조정가능
    - **효과** 를 설정해 줄 수 있다.
       - `PiCamera.IMAGE_EFFECTS` 에 들어있으며 원하는 **효과**를 `PiCamera.effect` 에 할당해준다.
+5. ### [pi_ex05_video_record.py](./pi_ex05_video_record.py)
+   - `start_recording` 을 이용하여 **동영상** 녹화
+   - `h.264` 코덱으로 저장되는데 완전한 확장자가 아님 !
+      - 확장자 명을 바꾸는 것으로 해결 안됨
+      - `gpac` 패키지 설치
+      
+         ```sheel script 
+            MP4 -add "기존파일" "변경파일"
+         ```
+      - 위와같이 쉘 명령 진행하여 변경
+   - 혹은 파이썬에서 `subprocess` 라이브러리와 `os` 라이브러리를 활용해 쉘명령 진행 
+6. ### []()
