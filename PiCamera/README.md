@@ -55,3 +55,10 @@
    - `capture_continuous`를 이용하여 연속 촬영하기
       - 멈추지 않고 계속 촬영
       - **파일명** 을 반환
+10. ### [pi_ex10_numpy_opencv.py](./pi_ex10_numpy_opencv.py)
+   - `numpy` 배열로 **capture** 하여 `opencv` 와 연동할 수 있다.
+   - 무한 loop를 돌리면 `cv2.VideoCapture` 와 동일한 기능을 구현 가능하다.
+   - 1초에 **2-4** 장 밖에 처리를 하지 못한다.
+      - `capture`를 소프트웨어적으로 처리하기 때문에 오래걸린다.
+      - **하드웨어** 지원을 받으면 속도를 올릴 수 있다.
+      - `capture` 시 **use_video_port = True** 를 하면 속도가 빨라진다.
