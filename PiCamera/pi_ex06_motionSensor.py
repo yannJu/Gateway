@@ -33,7 +33,7 @@ def stop():
     convert(src, dst)
 
 pir = MotionSensor(12)
-pir.when_motion = record()
-pir.when_no_motion = stop()
+pir.when_motion = record
+pir.when_no_motion = stop
 
 pause()
