@@ -14,5 +14,6 @@ class HtmlGetter(threading.Thread):
 url = "https://www.google.com"
 thread = HtmlGetter(url)
 thread.start()
-# thread.run()
+
+thread.join()
 print("END")
