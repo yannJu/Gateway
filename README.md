@@ -21,6 +21,13 @@
         - `pigpiod` 는 실제 **digital pin** 에 연결되어있는 서버 프로그램이다.
     - 해당 서버가 `PiGPIOFactory` 에 의해 **네트워크** 커넥션을 맺게된다.
     - 사용할 센서의 `pin_factory` 에 해당 커넥션 객체를 할당함으로써 센서의 핀을  `pigpiod`가 담당하게 된다.
-4. ### [openCV(cv_ex01_cv_ex04)](./openCV(cv_ex01_cv_ex04)/)
+4. ### [openCV(cv_ex01_cv_ex15)](./openCV(cv_ex01_cv_ex15)/)
     - `cv2`  모듈을 이용하여 간단한 실습
+    - `Video Capture` 부터, `Video Write` 등을 이용하여 이미지, 영상 처리
     - 라즈베리파이와 연동하여 **센서** 동작 함께 해보기
+    - `harrdetect` 를 통해 **얼굴인식**
+5. ### [PiCamera(pi_ex01_pi_ex](./PiCamera)
+    - `PiCamera` 를 활용한 실습
+    - 라즈베리파이에 연결하여 `Legacy` 를 설정해주어야한다.
+        - `sudo raspi-config` 에 들어가 설정
+    - **Python** 의 `Picamera` 모듈을 통해 실습 진행
