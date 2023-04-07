@@ -1,11 +1,12 @@
 from subprocess  import call
 import os
 import picamera
+from video_util import convert
 
-def convert(src, dst):
-    command =  f'MP4Box -add {src} {dst}'
-    call([command], shell = True)
-    os.remove(src)
+# def convert(src, dst):
+#     command =  f'MP4Box -add {src} {dst}'
+#     call([command], shell = True)
+#     os.remove(src)
 
 filename = ""
 with picamera.PiCamera() as cam:
