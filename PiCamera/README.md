@@ -14,3 +14,7 @@
    - `Text` 추가하기
       - `PiCamera` 모듈에서 **annotate_** 를 이용하여 지정 
       - `Color` 모듈에서 색상 지정
+4. ### [pi_ex04_effect.py](./pi_ex04_effect.py)
+   - 밝기(`brightness`), 대비(`contrast`) 조정가능
+   - **효과** 를 설정해 줄 수 있다.
+      - `PiCamera.IMAGE_EFFECTS` 에 들어있으며 원하는 **효과**를 `PiCamera.effect` 에 할당해준다.
