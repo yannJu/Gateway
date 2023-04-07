@@ -9,3 +9,8 @@
    - `resolution` 을 조절하여 **해상도** 설정 가능
    - `capture` 를 통해 **이미지** 를 저장할 수 있다.
       - 경로를 지정해주지 않으면 동일 경로에 저장된다.
+3. ### [pi_ex03_continue_cap.py](./pi_ex03_continue_cap.py)
+   - **5초** 간격으로 연속 촬영하기
+   - `Text` 추가하기
+      - `PiCamera` 모듈에서 **annotate_** 를 이용하여 지정 
+      - `Color` 모듈에서 색상 지정
