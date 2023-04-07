@@ -26,7 +26,7 @@
     - `Video Capture` 부터, `Video Write` 등을 이용하여 이미지, 영상 처리
     - 라즈베리파이와 연동하여 **센서** 동작 함께 해보기
     - `harrdetect` 를 통해 **얼굴인식**
-5. ### [PiCamera(pi_ex01_pi_ex](./PiCamera)
+5. ### [PiCamera(pi_ex01_pi_ex10)](./PiCamera(pi_ex01-pi_ex10)/)
     - `PiCamera` 를 활용한 실습
     - 라즈베리파이에 연결하여 `Legacy` 를 설정해주어야한다.
         - `sudo raspi-config` 에 들어가 설정
