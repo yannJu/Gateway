@@ -48,7 +48,9 @@
             1. `Thread` 클래스에 실행할 **함수** 를 전달하여 실행
             2.  **상속** 을 사용하여 실행 → `run` 이라는 메소드를 꼭 **재정의** 
         * `start()` 를 실행해야 **작업 스레드** 로서 독립적으로 실행 된다.
-7. ### [Audio](./Audio/)
+7. ### [Audio](./Audio(au%2Ctts%2Csd)/)
     - `pyaudio` 를 이용하여 **녹음**, **저장**
     - `GoogleSpeech` 를 이용하여 **TTS**, **STT** 실습
     - `Sounddevice` 를 이용하여 **녹음**, **저장**
+8. ### [Server](./Server/)
+    - 
