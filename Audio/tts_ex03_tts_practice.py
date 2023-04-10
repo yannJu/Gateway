@@ -15,4 +15,4 @@ while True:
     
     song = AudioSegment.from_mp3(f) #BytesIO 로 읽어오기
     song.export('convert_yanjo.mp3', format='mp3', codec='libmp3lame')
-    # play(song)g
+    # play(song)

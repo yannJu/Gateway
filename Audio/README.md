@@ -1,4 +1,4 @@
-## Audio🌂
+## Audio(Pydub, TTS, STT, SoundDevice)🌂
 ---
 ### Pydub 등을 이용한 Audio 실습
 1. ### [au_ex01_selectMic.py](./au_ex01_selectMic.py)
@@ -79,3 +79,11 @@
    - **text** 를 **BytesIO를** 이용하여 `음성 합성`으로 *출력* 하는 코드 구현
      - 이때 `file` 이 아니라 `BytesIO`로 운영
      - **write** 후 **read** 를 해야하기 때문에 `seek()` 를 꼭 해주어야 한다.
+4. ### [tts_ex04_stt_afterTTS.py](./tts_ex04_stt_afterTTS.py)
+   - `TTS`로 만들어낸 음성을 다시 `STT`를 이용하여 **텍스트** 로 만들어보기
+   - **tts_ex01, 02** 를 이용
+   - `STT`는 **wav** 여야하는데 `TTS`가 **mp3** 로 출력되기 때문에 **convert** 가 한번 들어간다.
+---
+### Sound Device 모듈
+1. ### []()
+   - 
