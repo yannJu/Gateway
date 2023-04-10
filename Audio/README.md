@@ -101,3 +101,9 @@
    - `callback` 의 **indata** 는 **numpy배열** 로 들어온다.
    - **Main Thread** 의 `Consumer` 에서 서버로 계속 전송하게 되면 **라이브 스트리밍** 기술을 구현할 수 있다.
    - `InputStream` 으로 **출력** 불가능
+4. ### [sd_ex04_volume.py](./sd_ex04_volume.py)
+   - `indata` 의 크기가 **1K**, `samplewidth` 가 **2byte**, `channels` 이 **1** 이라고 가정하자.
+     - 몇개의 **샘플** 이 있는가? ▶ 512(1K / 2byte)
+     - **Volume**  은? ▶ 평균을 이용하여 구하기?
+      - 항상 평균을 내기에는 너무 오래걸리고, 대부분 비슷할 것이다
+      - 속도를 고려하여 **엇비슷** 하게만 계산하자. . .
