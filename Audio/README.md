@@ -1,0 +1,34 @@
+## Audio🌂
+---
+1. ### [au_ex01_selectMic.py](./au_ex01_selectMic.py)
+   - `Audio` 장치를 찾기위한 **정보** 출력
+2. ### [au_ex02_record.py](./au_ex02_record.py)
+   - **채널**이 1개 라면 `mono`, 2개 이상이면 `stereo`
+   - 1개 측정해서 **digital** 로 변환하려는 포맷 지정
+     - `Volume Level` 을 의미한다.
+     - bit가 커질수록 범위가 넓어지므로
+   - 1초에 몇번 측정할거냐를 제어 → `Rate`
+     - **44100** 은 보통 `CD`음질
+     - `CD`의 절반정도는 `라디오` 음질 . .
+   - Q. 1초에 생성되는 데이터의 크기는?
+     - 1회 **Sampling** 크기는 2Byte
+     - 1회 **Sampling** 횟수는 48000
+     - 1개의 채널 
+     - 2Byte * 48000 * 1 = **96K(96,000Byte)**
+   - `Chunk` : 미리 메모리를 확보, **Buffer** 의 크기
+   - **wave** 모듈은 `wave` 파일로 저장하기 위해 필요하다.
+3. ### [au_ex03_player.py](./au_ex03_player.py)
+   - **데이터**를 읽어올 때에도 **Sampling** 크기, 횟수, 채널이 필요하다.
+     - `getchannels()`, `getframerate()`, `getsampwidth()`  을 이용
+4. ### [au_ex04_audio_withThread.py](./au_ex04_audio_withThread.py)
+   - `Thread` 를 이용하여 녹음 실습
+   - 프로그램이 시작하면 **녹음시작**
+   - `Enter` 가 입력되면 **녹음중단**
+   - 이후 **파일명** 입력받기
+   - 파일 저장
+   - `stream` 을 `close` 하면 세그멘테이션 에러가 난다 . . 왜일까 . .
+5. ### [au_ex05_pydub.py](./au_ex05_pydub.py)
+   - `AudioSegment` 를 이용하여 **데이터 처리**
+   - `play` 를 이용하여 **재생**
+      - 이때 `play` 는 동기함수
+   - **Thread** 화도 가능
