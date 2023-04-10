@@ -36,3 +36,16 @@
    - `Lock` 클래스를 호출하여 적용하면 다음과 같이 오류 없이 진행된다. (**Ctrl+C** 를 이용해 프로그램 종료)
    
       <img src = "./image/img2.PNG" width = "60%">
+5. ### [th_ex07_producer.py](./th_ex07_producer.py) & [th_ex08_consumer.py](./th_ex08_consumer.py) & [th_ex09_main.py](./th_ex09_main.py)
+   - **생성자** 와 **소비자** 구조
+   - `Producer` 와 `Consumer` 가 실행되는 속도가 다르다고 가정
+   - `Producer` 가 더 빠르다면 **Queue** 에 계속 데이터가 쌓이게 된다.
+       - **Queue** 가 꽉 차게 되면 `Producer` 는 기다린다 . .
+   - `Consumer` 가 더 빠르다면 **Queue** 가 비게 된다.
+       - **Queue** 가 비게 되면 `Consumer`는 기다린다 . .
+   - `put()` 을 할 때 **default** 로 **block** 이 True 로 되어있다.
+       - 이것은 **Queue** 가 꽉 차게 되면 슬롯이 확보될 때 까지 `블록` 한다는 의미
+6. ### [th_ex10_timer1.py](./th_ex10_timer1.py) & [th_ex11_timer2.py](./th_ex11_timer2.py)
+   - `Timer` 객체는 **Start()** 를 통해 타이머가 시작
+   - `Restart` 는 할 수 없다.
+       - 하고싶다면 `Cancel` 후 다시 **객체를 생성** 해주고 `Start` 를 해 주어야 한다.
