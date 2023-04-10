@@ -87,11 +87,17 @@
 ### Sound Device 모듈
 1. ### [sd_ex01_basic.py](./sd_ex01_basic.py)
    - `stream` : **연속적인** 데이터 `흐름` 처리
-     - `흐름` 이기 때문에 **방향성** 존재 : 단방향
+     - `흐름` 이기 때문에 **방향성** 존재
      - 파일, socket . . .등등
-   - **녹음**하기
+   - **녹음**하기 
+   - `Stream` 으로 **outdata** 를 주었기 때문에 **출력** 가능
 2. ### [sd_ex02_save.py](./sd_ex02_save.py)
    - **녹음** 한 음성 **저장** 하기
    - 이전의 `pyaudio` 보다 간결하게 구현 가능
    - 대부분 `BytesIO` 를 지원하기 때문에 가능하면 `BytesIO` 로 저장
-3. ### []()
+3. ### [sd_ex03_variable_length_record.py](./sd_ex03_variable_length_record.py)
+   - `Producer & Consumer` 패턴을 이용하여 구현
+   - 임의의 길이를 녹음
+   - `callback` 의 **indata** 는 **numpy배열** 로 들어온다.
+   - **Main Thread** 의 `Consumer` 에서 서버로 계속 전송하게 되면 **라이브 스트리밍** 기술을 구현할 수 있다.
+   - `InputStream` 으로 **출력** 불가능
