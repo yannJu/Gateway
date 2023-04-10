@@ -26,12 +26,12 @@
     - `Video Capture` 부터, `Video Write` 등을 이용하여 이미지, 영상 처리
     - 라즈베리파이와 연동하여 **센서** 동작 함께 해보기
     - `harrdetect` 를 통해 **얼굴인식**
-5. ### [PiCamera(pi_ex01_pi_ex10)](./PiCamera(pi_ex01-pi_ex10)/)
+5. ### [PiCamera(pi_ex01_pi_ex10)](./PiCamera(pi_ex01_pi_ex10)/)
     - `PiCamera` 를 활용한 실습
     - 라즈베리파이에 연결하여 `Legacy` 를 설정해주어야한다.
         - `sudo raspi-config` 에 들어가 설정
     - **Python** 의 `Picamera` 모듈을 통해 실습 진행
-6. ### [Thread(th_ex01_th_ex)](./Thread/)
+6. ### [Thread(th_ex01_th_ex11)](./Thread(th_ex01_th_ex11)/)
     - `Process` : 실행중인 하나의 프로그램
         - 한 프로세스 내에서 여러개의 **스레드(thread)**를 동작 시킬 수 있다.
         - 프로세스마다 쓸 수 있는 **시간** 이 배정된다.
