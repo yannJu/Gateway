@@ -14,12 +14,12 @@ RATE = 48000
 
 frames = None #녹음 데이터 저장
 recording = False #녹음 상태 관리
+audio = pyaudio.PyAudio()
 
 def record():
     global frames, recording
 
     recording = True
-    audio = pyaudio.PyAudio()
     stream = audio.open(input_device_index=3, 
                         format=FORMAT,
                         channels=CHANNELS,
@@ -34,9 +34,9 @@ def record():
         data = stream.read(CHUNK, exception_on_overflow=False)
         frames.append(data)
         
-    # 얘네를 하면 세그멘테이션 에러가 난다. . 
     stream.stop_stream()
     stream.close()
+    # audio 를 전역변수로 만들면 에러가 나지 않는다. (라즈베리파이에서는 . . !)
     audio.terminate()
         
 def stop_record():
