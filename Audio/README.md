@@ -55,8 +55,27 @@
    - 앞서 실습한 내용을 바탕으로 `play`
 2. ### [tts_ex02_stt.py](./tts_ex02_stt.py)
    - **음성**파일을 `speechRecognition` 을 통해 **텍스트** 로 변환
-3. ### []()
+3. ### [tts_ex03_tts_practice.py](./tts_ex03_tts_practice.py)
    - 굳이 **실제 파일** 을 가지고 데이터를 처리할 필요가 없다.
    - `BytesIO` 를 이용하여 **데이터 가공**하고자 하는데 지원을 하는지 확인
      - 하지만 **tts** 는 `BytesIO` 를 지원하지 않는다.
      - 오픈소스를 수정하여 `BytesIO`를 지원 가능하도록 수정 . . !
+
+      ```python
+        # tts > save2 생성
+        def save2(self, f):
+          self.write_to_fp(f)
+      ```
+      - 좋지 않은 구현, **인자** 의 type 에 따라 구별하는 것이 좋아보인다 !
+      ``` python
+        if isinstance(savefile, str):
+              with open(str(savefile), "wb") as f:
+                  self.write_to_fp(f)
+                  log.debug("Saved to %s", savefile)
+          else:
+              self.write_to_fp(savefile)
+      ```
+
+   - **text** 를 **BytesIO를** 이용하여 `음성 합성`으로 *출력* 하는 코드 구현
+     - 이때 `file` 이 아니라 `BytesIO`로 운영
+     - **write** 후 **read** 를 해야하기 때문에 `seek()` 를 꼭 해주어야 한다.
