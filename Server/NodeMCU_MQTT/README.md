@@ -117,4 +117,12 @@
         else led.setValue(0);
       }
     ```  
-8.  
+8.  ### [nodeMCU에서 받은 데이터 웹브라우저에 출력(/templates/iot/mqtt.html)](./templates/iot/mqtt.html)
+    - `<script>` 문에서 **subscribe** 한 값을 동적으로 할당해준다.
+    - `innerText` : 태그가 아닌 텍스트로 보고 할당
+      - **ID** 값을 이용하여 가져온 Element 들에 `innerText` 를 통해 할당하여 출력  
+    - `split` 을 이용하여 **배열**을 반환받아 이용
+    - 다음과 같이 **온도**, **조도**, **습도** 가 화면에 출력됨을 볼 수 있다.
+     
+      ![](../img/img6.png)
+9.  

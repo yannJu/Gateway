@@ -4,6 +4,19 @@
     <button type = 'button' id = 'publish-btn'>전송</button>
 </div>
 
+<div>
+    <h3>현재상태</h3>
+    <div>
+        조도 : <span id = 'illu'></span>
+    </div>
+    <div>
+        온도 : <span id = 'temp'></span>℃
+    </div>
+    <div>
+        습도 : <span id = 'humi'></span>
+    </div>
+</div>
+
 <!--CDN Script-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
 
@@ -13,12 +26,17 @@
     let inputTopic = document.getElementById('topic')
     let inputMsg = document.getElementById('message');
 
+    // 상태표시 변수
+    let illu = document.getElementById('illu');
+    let temp = document.getElementById('temp');
+    let humi = document.getElementById('humi');
+
+    /*NodeMCU Broker와 연결*/
     const BROKER_IP = 'localhost';
     const BROKER_PORT = 9001;
     const CLIENT_ID = 'clientID - ' + parseInt(Math.random() * 100);
     const SUBSCRIBE_TOPIC  = 'iot/yanjo/sensor/#';
 
-    /*NodeMCU Broker와 연결*/
     client = new Paho.MQTT.Client(BROKER_IP, BROKER_PORT, CLIENT_ID);
     console.log(BROKER_IP, BROKER_PORT, CLIENT_ID);
 
@@ -41,6 +59,18 @@
     function onMessageArrived(message) {
         console.log('topic : ' + message.destinationName);
         console.log('message : ' + message.payloadString);
+
+        // 현재상태 할당하기 위해 split
+        let parts = message.destinationName.split('/');
+        if (parts.at(-1) == "illuminate") {
+            illu.innerText = message.payloadString;
+        }
+        else if (parts.at(-1)  == "temperature") {
+            temp.innerText = message.payloadString;
+        }
+        else if (parts.at(-1)  == "humidity") {
+            humi.innerText = message.payloadString
+        }
     }
 
     // 연결 설정 (onFailure, onConnect)
