@@ -1,5 +1,7 @@
 # SERVER💒
 ---
+0. ### [nodeMCU_esp/](./nodeMCU_esp/)
+   - `Django` 와 연동할 `nodeMCU` 코드 폴더 
 1. ### [NodeMCU 와 Django 연동(MQTT_v0.1)](./NodeMCU_MQTT/)
    - **Release** 에서 `MQTT_v0.1` 까지의 단계
    -   `NodeMCU` 를 통해 **조도 센서** 와 **온습도 센서**의 데이터를 받아온다.

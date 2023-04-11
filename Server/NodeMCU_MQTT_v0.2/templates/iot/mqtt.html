@@ -8,12 +8,10 @@
 </div>
 
 <br>
-<form action="/action_page.php">
-    <div class="custom-control custom-switch">
-    <input type="checkbox" class="custom-control-input" id="switch1">
-    <label class="custom-control-label" for="switch1">전등</label>
-    </div>
-</form>
+<div class="custom-control custom-switch" id='ledIcon'>
+<input type="checkbox" class="custom-control-input" id="ledcontrol">
+<label class="custom-control-label" for="ledcontrol">전등</label>
+</div>
 <br>
 
 <div>
@@ -55,6 +53,9 @@
         temperature :[],
         humidity : []
     };
+
+    // 전등 켜고/끄기 변수
+    let ledcontrol = document.getElementById('ledcontrol');
 
     /*NodeMCU Broker와 연결*/
     const BROKER_IP = 'localhost';
@@ -125,6 +126,22 @@
         message.qos = 1;
 
         client.send(message);
+    }
+
+    // 전등 제어
+    ledcontrol.onclick = () => {
+       // console.log(ledcontrol.checked);
+       const topic = "iot/control/led";
+       let msg;
+
+       if (ledcontrol.checked) msg = "on";
+       else msg = "off";
+       
+       const message = new Paho.MQTT.Message(msg);
+       message.destinationName = topic;
+       message.qos = 1;
+       
+       client.send(message);
     }
 </script>
 {% endblock script %}
