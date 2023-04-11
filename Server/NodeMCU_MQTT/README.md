@@ -101,4 +101,20 @@
       - cmd 창에서 `mosquitto_sub -v -h localhost -t iot/control/# ` 를 입력하면 웹브라우저에서 **publish** 한 내용을 확인할 수 있다.
 
       ![](../img/img5.PNG)
-7.  ### []()
+7.  ### [웹브라우저와 MQTT연동_nodeMCU에 Publish](./)
+    - **6**에서 진행했던 것과 동일하게 웹브라우저에서 `topic`과 `message` 를 **publish**
+    - **publish** 한 값을 토대로 `nodeMCU`의 내장 **led** 동작
+    - 아두이노에 하단과 같이 코드 추가
+       
+      ```c
+      void callback(char *topic, byte *payload, unsigned int length) {
+        char buf[128];
+        memcpy(buf, payload, length);
+        buf[length] = '\0';
+
+        String msg = buf;
+        if (msg == "on") led.setValue(1);
+        else led.setValue(0);
+      }
+    ```  
+8.  
