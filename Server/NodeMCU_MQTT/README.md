@@ -125,4 +125,7 @@
     - 다음과 같이 **온도**, **조도**, **습도** 가 화면에 출력됨을 볼 수 있다.
      
       ![](../img/img6.png)
-9.  
+9.  ### [이전 값 같이 출력하기(./templates/iot/mqtt.html)](./templates/iot/mqtt.html)
+    -  `historyValues` 배열을 만들어 이전값들을 저장 
+       -  `push` 를 통해 배열의 끝에 추가
+10. 

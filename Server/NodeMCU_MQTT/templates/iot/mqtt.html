@@ -27,9 +27,21 @@
     let inputMsg = document.getElementById('message');
 
     // 상태표시 변수
+    /*
     let illu = document.getElementById('illu');
     let temp = document.getElementById('temp');
     let humi = document.getElementById('humi');
+    */
+    let sensors = {
+        illuminate : document.getElementById('illu'),
+        temperature : document.getElementById('temp'),
+        humidity : document.getElementById('humi')
+    };
+    let historyValues = {
+        illuminate : [],
+        temperature :[],
+        humidity : []
+    };
 
     /*NodeMCU Broker와 연결*/
     const BROKER_IP = 'localhost';
@@ -62,6 +74,7 @@
 
         // 현재상태 할당하기 위해 split
         let parts = message.destinationName.split('/');
+        /*
         if (parts.at(-1) == "illuminate") {
             illu.innerText = message.payloadString;
         }
@@ -71,6 +84,13 @@
         else if (parts.at(-1)  == "humidity") {
             humi.innerText = message.payloadString
         }
+        */
+        if (sensors[parts.at(-1)]) {
+            sensors[parts.at(-1)].innerText = message.payloadString;
+            historyValues[parts.at(-1)].push(message.payloadString);
+            console.log(historyValues);
+        }
+        else console.log("잘못된 센서 카테고리입니다 . . .", parts.at(-1));
     }
 
     // 연결 설정 (onFailure, onConnect)
