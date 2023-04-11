@@ -117,7 +117,7 @@
         if (msg == "on") led.setValue(1);
         else led.setValue(0);
       }
-    ```  
+      ```  
 8.  ### [nodeMCU에서 받은 데이터 웹브라우저에 출력(/templates/iot/mqtt.html)](./templates/iot/mqtt.html)
     - `<script>` 문에서 **subscribe** 한 값을 동적으로 할당해준다.
     - `innerText` : 태그가 아닌 텍스트로 보고 할당
@@ -129,4 +129,3 @@
 9.  ### [이전 값 같이 출력하기(./templates/iot/mqtt.html)](./templates/iot/mqtt.html)
     -  `historyValues` 배열을 만들어 이전값들을 저장 
        -  `push` 를 통해 배열의 끝에 추가
-10. 
