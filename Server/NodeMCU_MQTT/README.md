@@ -18,7 +18,7 @@
         ![](../img/img1.PNG)
         ![](../img/img2.PNG) 
     - 제대로 들어오고 있음을 확인할 수 있다.
-3.  ### [NodeMCU 와 연결](./iot/sub.py)
+3.  ### [NodeMCU 와 연결(/iot/sub.py)](./iot/sub.py)
     - `NodeMCU` 에 **온습도 센서(DHT11)**  와 **조도센서(CdS)**   연결
       - `DHT11`은 **디지털 7** 번핀 연결
       - `CdS` 는 **A0** 연결
@@ -38,7 +38,7 @@
     - 다음과 같이 값이 잘 들어오는 것을 확인할 수 있다. 
 
         ![](../img/img3.PNG)
-4.  [MariaDB 사용]()
+4.  ### [MariaDB 사용(/config/settings.py)](/config/settings.py)
     - 실제 서버처럼 동작시키기 위해 **sqlite** 가 아닌 **MariaDB** 사용
     - `root` 로 접근해서 **새로운 데이터베이스**  생성
       
@@ -67,7 +67,7 @@
     - 서버를 실행하면 아래와 같이 `MariaDB`에 데이터가 쌓이는 것을 볼 수 있다.
 
       ![](../img/img4.PNG)
-5.  [웹브라우저와 MQTT 연동_템플릿 생성](./templates/iot/)
+5.  ### [웹브라우저와 MQTT 연동_템플릿 생성(/templates/iot/)](./templates/iot/)
     - 웹 브라우저는 `Django`   와 **http** 통신
     - `MQTT Broker` 와 연결하기 위해 **WebSocket** 통신 활용
       - 그와 관련하여 몇가지 설정을 해야한다.
@@ -87,13 +87,18 @@
         ```
         - 따라서 별도로 **view** 함수를 만들지 않아도 되도록 한다.
         - 위에 추가한 대로 **root** 에 `template` 디렉토리를 생성하고 [/iot/urls.py](./iot/urls.py)에서 작성한 대로 그 하위에 *[iot](./templates/iot/)* 디렉토리와 *[mqtt.html](./templates/iot/mqtt.html)* 파일을 생성
-6.  ### [웹브라우저와 MQTT연동_발행 및 구독](./templates/iot/mqtt.html)
-    -  `onConnectionLost`, `onMessageArrived` 함수를 이용하여 연결 전에 설정 진행
-    -  `onFailure`, `onConnect` 를 통해 연결시 설정
-    -  `Paho.MQTT.Message` 를 이용하여 **MQTT 메시지 객체** 만들기
-       -  `destinationName` : 토픽명
-       -  `payloadingString` : 메시지
-       -  토대로 `subscribe` & `publish`  진행
-    - 이전에 만들어 둔 **버튼** 과 **텍스트박스** Element 들을 활용하여 진행
-    - 
-7.  
+6.  ### [웹브라우저와 MQTT연동_발행 및 구독(/templates/iot/mqtt.html)](./templates/iot/mqtt.html)
+    - **Subscribe** 진행 . . .  
+      -  `onConnectionLost`, `onMessageArrived` 함수를 이용하여 연결 전에 설정 진행
+      -  `onFailure`, `onConnect` 를 통해 연결시 설정
+      -  `Paho.MQTT.Message` 를 이용하여 **MQTT 메시지 객체** 만들기
+         -  `destinationName` : 토픽명
+         -  `payloadingString` : 메시지
+         -  토대로 `subscribe` & `publish`  진행
+    - **Publish** 진행 . . . 
+      - **버튼** 과 **텍스트박스** Element 들을 활용하여 진행
+      - **텍스트 박스** 의 내용을 각각 `topic`, `message` 로하여 **client** 에 `send`
+      - cmd 창에서 `mosquitto_sub -v -h localhost -t iot/control/# ` 를 입력하면 웹브라우저에서 **publish** 한 내용을 확인할 수 있다.
+
+      ![](../img/img5.PNG)
+7.  ### []()

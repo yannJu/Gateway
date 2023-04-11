@@ -56,7 +56,7 @@
     // 전송 버튼 클릭시 publish 하도록 . .
     btn.onclick = () => {
         const topic = inputTopic.value;
-        const message = new Paho.MQTT.Message(inputMsg,value);
+        const message = new Paho.MQTT.Message(inputMsg.value);
 
         message.destinationName = topic;
         message.qos = 1;
