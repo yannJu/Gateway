@@ -5,8 +5,8 @@
    - *[runserver.cmd](./runserver.cmd)* 라는 **cmd** 파일을 생성하여 명령어를 보다 **간결**하게 실행 가능 ▶ `서버 실행` 하는 명령어를 담고 있다.
    - *[manage.cmd](./manage.cmd)* 또한 위와 동일하지만, **cmd** 창에서 추가로 입력받아 실행 ▶ `manage migrate`, `manage createuser` 등과 같이 사용 가능
 1.  ### [Sensor 객체 생성(/iot/models.py)](./iot/models.py)
-   - *[iot/](./iot/)* 라는 앱을 추가
-   - *[iot/models.py](./iot/models.py)* 에 `Sensor` 라는 모델을 추가 ▶ 각종 `Sensor`들의 데이터를 받아오는 **모델** 로 사용할 예정
+    - *[iot/](./iot/)* 라는 앱을 추가
+    - *[iot/models.py](./iot/models.py)* 에 `Sensor` 라는 모델을 추가 ▶ 각종 `Sensor`들의 데이터를 받아오는 **모델** 로 사용할 예정
 2.  ### [Subscriber 생성(/iot/sub.py)](./iot/sub.py)
     - `MQTT`의 **Subscribe** 동작 구현
     - `on_connect` : **브로커** 의 연결을 확인하고,   **Subscribe** 를 신청
@@ -93,6 +93,7 @@
     -  `Paho.MQTT.Message` 를 이용하여 **MQTT 메시지 객체** 만들기
        -  `destinationName` : 토픽명
        -  `payloadingString` : 메시지
+       -  토대로 `subscribe` & `publish`  진행
     - 이전에 만들어 둔 **버튼** 과 **텍스트박스** Element 들을 활용하여 진행
     - 
 7.  
