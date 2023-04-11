@@ -1,0 +1,67 @@
+<div>
+    <p>토픽 : <input type = 'text' id = 'topic'></p>
+    <p>MESSAGE : <input type = 'text' id = 'message'></p>
+    <button type = 'button' id = 'publish-btn'>전송</button>
+</div>
+
+<!--CDN Script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+
+<!--========Script===============-->
+<script>
+    let btn = document.getElementById('publish-btn');
+    let inputTopic = document.getElementById('topic')
+    let inputMsg = document.getElementById('message');
+
+    const BROKER_IP = 'localhost';
+    const BROKER_PORT = 9001;
+    const CLIENT_ID = 'clientID - ' + parseInt(Math.random() * 100);
+    const SUBSCRIBE_TOPIC  = 'iot/yanjo/sensor/#';
+
+    /*NodeMCU Broker와 연결*/
+    client = new Paho.MQTT.Client(BROKER_IP, BROKER_PORT, CLIENT_ID);
+    console.log(BROKER_IP, BROKER_PORT, CLIENT_ID);
+
+    // 발행 및 구독 준비 //
+    client.onConnectionLost = onConnectionLost;
+    client.onMessageArrived = onMessageArrived;
+
+    client.connect({
+        onSuccess : onConnect, // 연결 성공시 호출 콜백
+        onFailure : onFailure,  // 연결 실패시 호출 콜백
+    });
+
+    // 연결전 설정 (onConnectionLost, onMessageArrived)
+    function onConnectionLost(responseObject) {
+        if (responseObject.errorCode !== 0) {
+            console.log('onConnectionLost : ' + responseObject.errorMessage);
+        }
+    }
+
+    function onMessageArrived(message) {
+        console.log('topic : ' + message.destinationName);
+        console.log('message : ' + message.payloadString);
+    }
+
+    // 연결 설정 (onFailure, onConnect)
+    function onFailure() {
+        alert('Please enter host and port again . .');
+    }
+
+    function onConnect() {
+        console.log('onConnect!');
+        client.subscribe(SUBSCRIBE_TOPIC); // 토픽 구독
+    }
+
+    // 전송 버튼 클릭시 publish 하도록 . .
+    btn.onclick = () => {
+        const topic = inputTopic.value;
+        const message = new Paho.MQTT.Message(inputMsg,value);
+
+        message.destinationName = topic;
+        message.qos = 1;
+
+        client.send(message);
+    }
+</script>
+<!--=============================-->
