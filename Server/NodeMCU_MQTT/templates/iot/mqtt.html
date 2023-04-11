@@ -1,8 +1,20 @@
+{% extends 'base.html' %} 
+
+{% block content %}
 <div>
     <p>토픽 : <input type = 'text' id = 'topic'></p>
     <p>MESSAGE : <input type = 'text' id = 'message'></p>
     <button type = 'button' id = 'publish-btn'>전송</button>
 </div>
+
+<br>
+<form action="/action_page.php">
+    <div class="custom-control custom-switch">
+    <input type="checkbox" class="custom-control-input" id="switch1">
+    <label class="custom-control-label" for="switch1">전등</label>
+    </div>
+</form>
+<br>
 
 <div>
     <h3>현재상태</h3>
@@ -16,11 +28,12 @@
         습도 : <span id = 'humi'></span>
     </div>
 </div>
-
 <!--CDN Script-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+{% endblock content %}
 
 <!--========Script===============-->
+{% block script %}
 <script>
     let btn = document.getElementById('publish-btn');
     let inputTopic = document.getElementById('topic')
@@ -114,4 +127,5 @@
         client.send(message);
     }
 </script>
+{% endblock script %}
 <!--=============================-->

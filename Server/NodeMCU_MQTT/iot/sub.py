@@ -10,7 +10,7 @@ def on_connect(client, userdata, flags, rc):
     else: print("연결 실패 : ", rc)
     
 def on_message(client, userdata, msg):
-    value = float(msg.payload.decode()) #byte 배열을 str으로 변환
+    value = int(msg.payload.decode()) #byte 배열을 str으로 변환
     # print(f" {msg.topic} {value} ")
     _, _, _, place, category = msg.topic.split('/') 
     

@@ -1,5 +1,6 @@
 ## MQTT 서비스 연동🚑
 ---
+→ **조도센서**가 없는채로 일단 진행하였다. 따라서 계속 이상한 값이 입력
 0. ### [Django 환경설정]
    - *[config/settings.py](./config/settings.py)*  에서 `ALLOWED_HOSTS` 를 수정하여 **외부 접근** 가능하게 함
    - *[runserver.cmd](./runserver.cmd)* 라는 **cmd** 파일을 생성하여 명령어를 보다 **간결**하게 실행 가능 ▶ `서버 실행` 하는 명령어를 담고 있다.
