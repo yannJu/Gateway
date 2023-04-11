@@ -53,4 +53,4 @@
     - `GoogleSpeech` 를 이용하여 **TTS**, **STT** 실습
     - `Sounddevice` 를 이용하여 **녹음**, **저장**
 8. ### [Server](./Server/)
-    - 
+    - *[Server/NodeMCU_MQTT/](./Server/NodeMCU_MQTT/)* : `NodeMCU` 와`*MQTT` 를 통해 들어오는 데이터를 **서버** 에 전송
