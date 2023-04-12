@@ -52,8 +52,10 @@
    - `from` 을 통해 넘어온 **csrf** 를 제외하기 위해 `csrf_exempt` 를 **import** 하고 데코레이터(`@`) 추가 
    - **request** 가 `POST` 메소드로 들어온 경우 `DB`에 저장
    - *[/iot/urls.py](./iot/urls.py)* 에 **upload** 추가
-5. ### []()
+5. ### [파일 업로드 실습(fileUpload.py)](./fileUpload.py)
    - `Get`, `Post` 만 웹 브라우저 **form**  이 가능
      - `Get`은 **url** 에 정보가 붙는다. 
      - `Post`는 **body** 에 정보가 붙는다.
+   - **파일명** 과 **파일의 경로** 를 이용하여 `Open` 한 **파일객체** 를 `POST`
+   -
 6. 
