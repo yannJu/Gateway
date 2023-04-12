@@ -10,4 +10,4 @@
    -   브라우저 `base.html` 등 추가 구현
 2. ### [](./NodeMCU_MQTT_v0.2/)
    - **전등 켜기/끄기** 기능 추가(`Custom Switch`)
-     -  전등의 유무에 따라 **Text 색상** 변경(`parentElement` 등을 통해 상위 클래스 접근) 
+   - 
