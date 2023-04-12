@@ -54,3 +54,4 @@
     - `Sounddevice` 를 이용하여 **녹음**, **저장**
 8. ### [Server](./Server/)
     - *[Server/NodeMCU_MQTT/](./Server/NodeMCU_MQTT/)* : `NodeMCU` 와`*MQTT` 를 통해 들어오는 데이터를 **서버** 에 전송
+    - *[Server/NodeMCU_MQTT_v0.2/](./Server/NodeMCU_MQTT_v0.2/)* : 파일을 **서버**에 **업로드** 및 **다운로드**
