@@ -57,5 +57,9 @@
      - `Get`은 **url** 에 정보가 붙는다. 
      - `Post`는 **body** 에 정보가 붙는다.
    - **파일명** 과 **파일의 경로** 를 이용하여 `Open` 한 **파일객체** 를 `POST`
-   -
-6. 
+6. ### []()
+   - 클래스 기반의 `View` 를 작성
+     - 장고에서는 `generic` 에 여러 `View`들이 정의되어있다.
+     - ListView, DetailView, CreateView, UpdateView, DeleteView, FormView, TemplateView . . .
+   - 
+   - 
