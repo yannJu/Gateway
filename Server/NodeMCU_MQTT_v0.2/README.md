@@ -51,4 +51,9 @@
    - 이전에는 **http Response**를 이용하여 **http** 응답을 했었으나 이번에는 **json Response** 로 **Json** 응답을 진행
    - `from` 을 통해 넘어온 **csrf** 를 제외하기 위해 `csrf_exempt` 를 **import** 하고 데코레이터(`@`) 추가 
    - **request** 가 `POST` 메소드로 들어온 경우 `DB`에 저장
-5. 
+   - *[/iot/urls.py](./iot/urls.py)* 에 **upload** 추가
+5. ### []()
+   - `Get`, `Post` 만 웹 브라우저 **form**  이 가능
+     - `Get`은 **url** 에 정보가 붙는다. 
+     - `Post`는 **body** 에 정보가 붙는다.
+6. 
