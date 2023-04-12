@@ -57,12 +57,19 @@
      - `Get`은 **url** 에 정보가 붙는다. 
      - `Post`는 **body** 에 정보가 붙는다.
    - **파일명** 과 **파일의 경로** 를 이용하여 `Open` 한 **파일객체** 를 `POST`
-6. ### [클래스 기반의 View생성(/iot/views.py)](./iot/views.py)
+6. ### [업로드 동영상 리스트_클래스 기반의 View생성(/iot/views.py)](./iot/views.py)
    - *[/iot/views.py](./iot/views.py)* : 클래스 기반의 `View` 를 작성
      - 장고에서는 `generic` 에 여러 `View`들이 정의되어있다.
      - ListView, DetailView, CreateView, UpdateView, DeleteView, FormView, TemplateView . . .
    - `View` 에서 작성한 **template** 을 기반으로 *[/templates/iot/sec_file_list.html](./templates/iot/sec_file_list.html)* 템플릿 작성
    - *[/iot/urls.py](./iot/urls.py)* :**url**에  `as_view()` 를 통해 `View` 연결
-7. ### []()
-   -  
+7. ### [업로드 된 동영상 Detail(/templates/iot/sec_file_detail.html)](./templates/iot/sec_file_detail.html)
+   - **6**과 동일하게 `View` 클래스 생성 후 , `template` 에 **html** 파일 만들어 준다.
+   - *[./iot/urls.py](./iot/urls.py)* 에 **url** 연결
+     - `<int:pk>` 를 통해 <변환함수 : 변수명>으로 연결
+     - **변수명** 은 변경 불가! ▷ 사용한 `DetailView` 에 **pk** 로 정의되어있다.
+   - *[templates/iot/sec_file_list.html](./templates/iot/sec_file_list.html)*에 연결시켜주면 연결된다.
+
+      ![](../img/v2_img2.PNG)
+      ![](../img/v2_img3.PNG)
 8. 

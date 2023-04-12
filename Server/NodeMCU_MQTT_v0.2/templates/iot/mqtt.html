@@ -1,6 +1,6 @@
-{% extends 'base.html' %} 
+{% comment %} {% extends 'base.html' %} 
 
-{% block content %}
+{% block content %} {% endcomment %}
 <div>
     <p>토픽 : <input type = 'text' id = 'topic'></p>
     <p>MESSAGE : <input type = 'text' id = 'message'></p>
@@ -28,10 +28,10 @@
 </div>
 <!--CDN Script-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
-{% endblock content %}
+{% comment %} {% endblock content %} {% endcomment %}
 
 <!--========Script===============-->
-{% block script %}
+{% comment %} {% block script %} {% endcomment %}
 <script>
     let btn = document.getElementById('publish-btn');
     let inputTopic = document.getElementById('topic')
@@ -144,5 +144,5 @@
        client.send(message);
     }
 </script>
-{% endblock script %}
+{% comment %} {% endblock script %} {% endcomment %}
 <!--=============================-->
