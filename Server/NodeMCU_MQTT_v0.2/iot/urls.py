@@ -6,6 +6,7 @@ app_name = 'iot'
 
 urlpatterns = [
     path('mqtt/', TemplateView.as_view(template_name='iot/mqtt.html')),
+    path('intrusion/', detect_intrusion, name = 'intrusion'),
     path('upload/', upload, name = 'upload'),
     path('sec_file/', SecFileListView.as_view(), name = 'list'),
     path('sec_file/<int:pk>', SecFileDetailView.as_view(), name='detail'),
