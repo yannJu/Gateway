@@ -3,6 +3,8 @@ from . import sub
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import SecFile
+# View 관련
+from django.views import generic
 
 # Create your views here.
 @csrf_exempt
@@ -19,3 +21,13 @@ def upload(request):
     else: msg = {'result' : 'fail'}
     
     return JsonResponse(msg)
+
+class SecFileListView(generic.ListView):
+    model = SecFile
+    template_name = 'iot/sec_file_list.html'
+    context_object_name = 'sec_files' #context 변수
+    
+class SecFileDetailView(generic.DetailView):
+    model = SecFile
+    template_name = 'iot/sec_file_detail.html'
+    context_object_name = 'vfile'

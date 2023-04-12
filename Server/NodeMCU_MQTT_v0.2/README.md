@@ -57,9 +57,12 @@
      - `Get`은 **url** 에 정보가 붙는다. 
      - `Post`는 **body** 에 정보가 붙는다.
    - **파일명** 과 **파일의 경로** 를 이용하여 `Open` 한 **파일객체** 를 `POST`
-6. ### []()
-   - 클래스 기반의 `View` 를 작성
+6. ### [클래스 기반의 View생성(/iot/views.py)](./iot/views.py)
+   - *[/iot/views.py](./iot/views.py)* : 클래스 기반의 `View` 를 작성
      - 장고에서는 `generic` 에 여러 `View`들이 정의되어있다.
      - ListView, DetailView, CreateView, UpdateView, DeleteView, FormView, TemplateView . . .
-   - 
-   - 
+   - `View` 에서 작성한 **template** 을 기반으로 *[/templates/iot/sec_file_list.html](./templates/iot/sec_file_list.html)* 템플릿 작성
+   - *[/iot/urls.py](./iot/urls.py)* :**url**에  `as_view()` 를 통해 `View` 연결
+7. ### []()
+   -  
+8. 
