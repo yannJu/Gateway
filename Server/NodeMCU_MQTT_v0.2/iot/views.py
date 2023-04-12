@@ -22,6 +22,13 @@ def upload(request):
     
     return JsonResponse(msg)
 
+def detect_intrusion(request):
+    print("intrusion Detection . . .")
+    print("send Notification by kakaotalk")
+    
+    msg = {"result" : "success"}
+    return JsonResponse(msg)
+
 class SecFileListView(generic.ListView):
     model = SecFile
     template_name = 'iot/sec_file_list.html'
