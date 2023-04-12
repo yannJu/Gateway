@@ -37,4 +37,18 @@
         }
       ```
     - **true** 값이 들어오면 **on**을, **false** 값이 들어오면 **off** 를 `publish` 하도록 구현하였다.
-2. 
+2. ### [녹화파일 업로드/다운로드_환경설정(/config/settings.py)](./config/settings.py)
+   - `static` 의 경우 개발 도중 결정되는 정적파일
+   - `media`의 경우 운영 도중 동적으로 생성되기 때문에 유형이 다르므로 **구분** 해준다.
+   -  `MEDIA_URL` 은 웹경로, `MEDIA_ROOT` 는 OS 가 관리하는 실제 파일 정보
+   - *[config/urls.py](./config/urls.py)* :  `static` 은 **load** 를 이용하여 불러올 수 있으나, `media` 는 따로 설정 해 주어야 한다.
+      -  `from django.conf import settings` 가 *[/config/settings.py](./config/settings.py)* 를 의미, 이를 통해 설정파일에 접근
+3. ### [녹화파일 업로드/다운로드_DB 모델 추가(/iot/models.py)](./iot/models.py)
+   -  **파일 이름(원본)** 과 **파일**을 `DB`에 저장하기 위해 `SecFile` 이라는 모델을 추가
+   -  **파일** 은 해당 날짜 폴더에 업로드하도록 한다.
+4. ### [업로드 함수 정의(/iot/views.py)](./iot/views.py)
+   - 파일에 **웹 브라우저** 가 접근하는 것이 아닌 `request` 객체가 접근
+   - 이전에는 **http Response**를 이용하여 **http** 응답을 했었으나 이번에는 **json Response** 로 **Json** 응답을 진행
+   - `from` 을 통해 넘어온 **csrf** 를 제외하기 위해 `csrf_exempt` 를 **import** 하고 데코레이터(`@`) 추가 
+   - **request** 가 `POST` 메소드로 들어온 경우 `DB`에 저장
+5. 
