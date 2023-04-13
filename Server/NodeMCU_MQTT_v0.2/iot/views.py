@@ -38,3 +38,11 @@ class SecFileDetailView(generic.DetailView):
     model = SecFile
     template_name = 'iot/sec_file_detail.html'
     context_object_name = 'vfile'
+    
+class CamView(generic.TemplateView):
+    template_name = "cam.html"
+    
+    def get_context_data(self):
+        context = super().get_context_data()
+        context['model'] = self.request.GET.get('mode', '#')
+        return context
