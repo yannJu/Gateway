@@ -4,6 +4,7 @@ from django.views.generic import TemplateView, FormView
 import json
 import requests
 from django.contrib import messages
+from .forms import *
 
 # Create your views here.
 client_id = '6acc3abf203ac6b3b5901880bd14d69e'
@@ -50,3 +51,20 @@ class KakaoAuthView(TemplateView):
     def save_access_token(self, access_token):
         with open("access_token.txt", "w") as f:
             f.write(access_token)
+
+#form class 를 쓰면 form.valid 알아서 유효성 하고 redirect
+#success_url로 redirect 객체 리턴 
+class KakaoTalkView(FormView):
+    form_class = KakaoTalkForm
+    template_name = "kakao_form.html"
+    success_url = "/kakao/talk"
+    
+    def form_valid(self, form):
+        res, text = form.send_talk()
+        
+        if res.json().get('result_code') == 0:
+            messages.add_message(self.request, messages.SUCCESS, "메시지 전송 성공 : " + text)
+        else:
+            messages.add_message(self.request, messages.ERROR, "메시지 전송 실패 : " + str(res.json()))
+            
+        return super().form_valid(form)
