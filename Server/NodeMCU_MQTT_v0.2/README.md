@@ -72,12 +72,17 @@
 
       ![](../img/v2_img2.PNG)
       ![](../img/v2_img3.PNG)
-8. ### [PIR 센서 감지시 녹화 후 업로드]()
-   -  `PIR` 센서를 이용해 **움직임** 이 감지되면 **녹화** 시작
+8. ### [PIR 센서 감지시 녹화 후 업로드(/Rpi_videoUpload/)](../Rpi_videoUpload/)
+   ***라즈베리파이에서 동작*** 
+   -  `PIR` 센서를 이용해 **움직임** 이 감지되면 **녹화** 시작 ▶ *[Rpi_videoUpload/motionSensor.py](../Rpi_videoUpload/motionSensor.py)*
       -  `.h264` 확장자로 저장
-   -  `.mp4`로 변환
-   -  움직임 감지가 멈추면 **서버**로 업로드
-   -  이후 **메신저**로 메시지를 보내기 위해 `Request` 를 보낸다.
-9. ### []()
-   -   
-10.  
+
+      ![](../img/v2_img4.PNG)
+   -  `.mp4`로 변환 ▶ *[Rpi_videoUpload/convert.py](../Rpi_videoUpload/convert.py)*
+   -  움직임 감지가 멈추면 **서버**로 업로드 ▶ *[Rpi_videoUpload/fileUpload.py](../Rpi_videoUpload/fileUpload.py)*
+
+      ![](../img/v2_img5.png)
+   -  이후 **메신저**로 메시지를 보내기 위해 `Request` 를 보낸다. ▶ *[Rpi_videoUpload/convert.py](../Rpi_videoUpload/convert.py)*
+      -   **서버** 의 `intrusion` 에 **get** 요청을 보냄으로써 **response** 를 받아낸다. ▶ *[/iot/views.py](./iot/views.py)*
+
+      ![](../img/v2_img6.PNG)
