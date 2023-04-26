@@ -12,7 +12,7 @@
         <br>
         {% if mode == "#" %} <img id = "image" />
         {% elif mode == 'snapshot' %} <img id = "imgae" src = {% url 'http://yannju:8000/mjpeg/?mode=snapshot' %}/>
-        {% elif mode == 'stream' %} <img id = "imgae" src = {% url 'http://yannju@:8000/mjpeg/?mode=stream' %}/>
+        {% elif mode == 'stream' %} <img id = "imgae" src = {% url 'http://yannju:8000/mjpeg/?mode=stream' %}/>
         {% endif %}
     </body>
 </html>

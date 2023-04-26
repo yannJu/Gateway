@@ -11,8 +11,8 @@
         </div>
         <br>
         {% if mode == "#" %} <img id = "image" />
-        {% elif mode == 'snapshot' %} <img id = "imgae" src = {% url 'snapshot' %}/>
-        {% elif mode == 'stream' %} <img id = "imgae" src = {% url 'stream' %}/>
+        {% elif mode == 'snapshot' %} <img id = "image" src = {% url 'snapshot' %}/>
+        {% elif mode == 'stream' %} <img id = "image" src = {% url 'stream' %}/>
         {% endif %}
     </body>
 </html>
