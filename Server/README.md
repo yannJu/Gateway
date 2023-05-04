@@ -19,5 +19,8 @@
      - *[/Rpi_videoUpload/](./Rpi_videoUpload/)*
 3. ### [미디어 서버 만들기](./RpiServer/) 
    - **라즈베리파이**를 서버로 두고, **이미지** 혹은 **비디오** 데이터를 읽어와 웹에 띄운다. (`Mjpeg`사용) 
-4. ### [카카오톡 메시지 보내기](NodeMCU_MQTT_v0.3)
+4. ### [프로젝트 > 사람을 감지하면 서버에 사진 전송](NodeMCU_MQTT_v0.3)
+
+   ![](./img/v3_img.PNG) 
 5. ### [REST API 연결하기](NodeMCU_MQTT_v0.4)
+   - *[NodeMCU_MQTT_v0.2/](./NodeMCU_MQTT_v0.2/)*  에서 생성한 **DB** 값을 `REST API` 로 전송

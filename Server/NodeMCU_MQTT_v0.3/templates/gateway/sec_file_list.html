@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<h1>보안 카메라 촬영 이미지 목록</h1>
+<hr>
+<ul>
+    {% for sec_file in sec_files %}
+        <li>
+            <a href = "{% url 'gateway:detail' sec_file.id %}">{{sec_file.file_name}}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
