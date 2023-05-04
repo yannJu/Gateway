@@ -1,13 +1,14 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-<h1>보안 카메라 녹화 영상</h1>
+<h1>보안 카메라 촬영 이미지</h1>
 
 <!--vfile : context변수-->
 <h3>{{vfile.file_name}}</h3>
 
-<!--비디오 재생-->
+<!-- 이미지 출력 -->
+{% comment %} <!--비디오 재생-->
 <video controls>
     <source src = "/media/{{vfile.sec_file}}" type = "video/mp4"/>
-</video>
+</video> {% endcomment %}
 {% endblock content %}
