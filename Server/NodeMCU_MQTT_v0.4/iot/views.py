@@ -44,5 +44,5 @@ class CamView(generic.TemplateView):
     
     def get_context_data(self):
         context = super().get_context_data()
-        context['model'] = self.request.GET.get('mode', '#')
+        context['mode'] = self.request.GET.get('mode', '#')
         return context
