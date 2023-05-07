@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from gateway.models import SecFile
+from gateway.models import DetectFile
 
-class SecFileSerializer(serializers.ModelSerializer):
+class DetectFileSerializer(serializers.ModelSerializer):
     class Meta:
-        model = SecFile
+        model = DetectFile
         fields = ('file_name', 'sec_file')

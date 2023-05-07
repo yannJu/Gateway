@@ -12,7 +12,7 @@ from .haarDetect import HarrDetect
 import subprocess
 import os
 #Upload
-from ..Rpi_videoUpload import fileUpload
+from .fileUpload import fileUpload
 
 # Create your views here.
 @csrf_exempt
@@ -25,9 +25,15 @@ def upload(request):
         
         cvt_file_name = convert(file_name)
         cvt_path = f"C:/Users/duswn/Desktop/git_repo/Gateway/Server/NodeMCU_MQTT_v0.3/{cvt_file_name}"
-        cvt_url = "http://172.20.10.5:8000/cvt_upload/"
-        upload(cvt_path, cvt_url)
+        cvt_url = "http://172.20.10.5:8000/gateway/cvt_upload/"
+        fileUpload(cvt_path, cvt_url)
         print(f"{cvt_file_name} // Cvt Fin----!")
+        os.remove(cvt_file_name)
+        
+        msg = {'result' : 'success'}
+    else: msg = {'result' : 'fail'}
+    
+    return JsonResponse(msg)
 
 def convert(file_name):
     # get Img
@@ -45,12 +51,18 @@ def convert(file_name):
     
     return f"cvt_{file_name}"
 
+@csrf_exempt
 def cvt_upload(request):
     if request.method == "POST":
         file_name = request.POST['file_name']
         sec_file = request.FILES['sec_file']
         model = DetectFile(file_name=file_name, sec_file=sec_file)
         model.save()
+        
+        msg = {'result' : 'success'}
+    else: msg = {'result' : 'fail'}
+    
+    return JsonResponse(msg)
 
 class SecFileListView(generic.ListView):
     model = SecFile

@@ -1,10 +1,10 @@
 from rest_framework import viewsets
 from django.shortcuts import render
-from .serializers import SecFileSerializer
-from gateway.models import SecFile
+from .serializers import DetectFileSerializer
+from gateway.models import DetectFile
 
 # Create your views here.
 
-class SecFileViewSet(viewsets.ModelViewSet):
-    queryset = SecFile.objects.all().order_by('id')
-    serializer_class = SecFileSerializer
+class DetectFileViewSet(viewsets.ModelViewSet):
+    queryset = DetectFile.objects.all().order_by('-id')
+    serializer_class = DetectFileSerializer
