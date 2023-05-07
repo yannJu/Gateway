@@ -8,4 +8,5 @@ urlpatterns = [
     path('upload/', upload, name = 'upload'),
     path('sec_file/', SecFileListView.as_view(), name = 'list'),
     path('sec_file/<int:pk>', SecFileDetailView.as_view(), name = 'detail'),
+    path("cvt_upload/", cvt_upload, name = 'cvtUpload')
 ]
